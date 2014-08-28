@@ -27,7 +27,8 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  # Helps with Bootstrap Glyphicons on heroku
+  config.assets.compile = true
 
   # Generate digests for assets URLs.
   config.assets.digest = true
@@ -83,9 +84,6 @@ Rails.application.configure do
   # Required for Heroku
   #Note to set this to actual host 
   config.action_mailer.default_url_options = { :host => 'stino-pinteresting.heroku.com' }
-
-  # Helps with Bootstrap Glyphicons on heroku
-  config.assets.compile = true
 
   #Sets paperclip to upload images to Amazon S3.
   config.paperclip_defaults = {
